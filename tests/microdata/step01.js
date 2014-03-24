@@ -30,7 +30,7 @@ test("Model", function() {
 
 test("attr exists", function() {
   ok(attr, "attr exists");
-  ok(typeof(attr) === 'function', "attr is a macro");
+  ok(Ember.typeOf(attr) === 'function', "attr is a macro");
 });
 
 test("store exists", function() {
