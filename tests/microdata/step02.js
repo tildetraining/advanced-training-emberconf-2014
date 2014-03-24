@@ -27,3 +27,7 @@ test("initializer defined", function() {
 test("controllers have access to the store", function() {
   ok(lookup('controller:article').get('store') instanceof Store);
 });
+
+test("routes have access to the store also", function() {                      
+  ok(lookup('route:article').get('store') instanceof Store);                   
+});
