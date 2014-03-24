@@ -24,10 +24,10 @@ var store;
 
 step(4, "Pushing to the Store", {
   setup: function() {
-    var container = new Ember.Container();
-    container.register('store:main', Store);
-    container.register('model:person', Person);
-    store = container.lookup('store:main');
+    this.container = new Ember.Container();
+    this.container.register('store:main', Store);
+    this.container.register('model:person', Person);
+    store = this.container.lookup('store:main');
   }
 });
 
@@ -101,10 +101,10 @@ test("pushing doesn't mangle string ids", function() {
 */
 
 // test("uses lookupFactory somewhere as part of a push", function() {
-//   var orig = container.lookupFactory,
+//   var orig = this.container.lookupFactory,
 //       yipee;
 //
-//   container.lookupFactory = function() {
+//   this.container.lookupFactory = function() {
 //     yipee = 'doodah';
 //     return orig.apply(this, arguments);
 //   };
@@ -120,7 +120,7 @@ test("pushing doesn't mangle string ids", function() {
 
 
 // test("uses container's returned typeFactory create() for instantiation", function() {
-//   var orig = container.lookupFactory('model:person'),
+//   var orig = this.container.lookupFactory('model:person'),
 //       origCreate = orig.create,
 //       ping;
 //
